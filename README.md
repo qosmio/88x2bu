@@ -26,17 +26,15 @@
 
 ### Tested Linux Distributions:
 
-- Kali - Rolling - 2020-09-24 - kernel 5.8
-- Ubuntu 20.10 - Daily - 2020-09-15 - kernel 5.8
-- Ubuntu 20.04
-- Ubuntu 18.04
-- Mint 20
+- Mint 20 ( https://linuxmint.com/ )
+- Ubuntu 20.04 ( https://ubuntu.com/ )
 - Mint 19.3
+- Ubuntu 18.04
 
 ### Tested Hardware:
 
 - EDUP EP-AC1605GS WiFi Adapter 1300Mbps USB 3.0 High Gain Wireless Adapter:
-  https://www.amazon.com/gp/product/B07Q56K68T
+  ( https://www.amazon.com/gp/product/B07Q56K68T )
 
 ## Supported Devices:
 
@@ -86,6 +84,7 @@ $ sudo ./dkms-install.sh
 $ sudo reboot
 ```
 ### Removal of the Driver:
+
 Open a terminal in the directory with the source code and execute the following command:
 ```
 $ sudo ./dkms-remove.sh
