@@ -22,19 +22,20 @@
 ### Supported Kernels:
 
 - Kernels: 2.6.24 ~ 5.6 (Realtek)
-- Updates to support kernel 5.8 have been applied
+- Kernel 5.8
 
 ### Tested Linux Distributions:
 
-- Mint 20 ( https://linuxmint.com/ )
-- Ubuntu 20.04 ( https://ubuntu.com/ )
+- Ubuntu 20.10 Beta
+- Mint 20			https://linuxmint.com/
+- Ubuntu 20.04		https://ubuntu.com/
 - Mint 19.3
 - Ubuntu 18.04
 
 ### Tested Hardware:
 
 - EDUP EP-AC1605GS WiFi Adapter 1300Mbps USB 3.0 High Gain Wireless Adapter:
-  ( https://www.amazon.com/gp/product/B07Q56K68T )
+  https://www.amazon.com/gp/product/B07Q56K68T
 
 ## Supported Devices:
 
@@ -92,9 +93,6 @@ $ sudo ./dkms-remove.sh
 ```
 $ sudo reboot
 ```
-### Secure Mode:
-
-If your system is in Secure Mode, DKMS will handle signing the driver. 
 
 ### Entering Monitor Mode with 'iw' and 'ip':
 Start by making sure the system recognizes the Wi-Fi interface:
