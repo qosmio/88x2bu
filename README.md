@@ -24,11 +24,16 @@
 - Kernels: 2.6.24 ~ 5.6 (Realtek)
 - Kernel 5.8
 
+### Supported Linux Distributions:
+
+- Ubuntu - https://linuxmint.com/
+- Mint --- https://ubuntu.com/
+
 ### Tested Linux Distributions:
 
 - Ubuntu 20.10 Beta
-- Mint 20             https://linuxmint.com/
-- Ubuntu 20.04        https://ubuntu.com/
+- Mint 20
+- Ubuntu 20.04
 - Mint 19.3
 - Ubuntu 18.04
 
