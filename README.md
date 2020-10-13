@@ -27,8 +27,8 @@
 ### Tested Linux Distributions:
 
 - Ubuntu 20.10 Beta
-- Mint 20			https://linuxmint.com/
-- Ubuntu 20.04		https://ubuntu.com/
+- Mint 20             https://linuxmint.com/
+- Ubuntu 20.04        https://ubuntu.com/
 - Mint 19.3
 - Ubuntu 18.04
 
@@ -59,22 +59,35 @@ This driver can be installed using DKMS. DKMS is a system utility which will aut
 $ sudo apt-get install dkms
 ```
 
+Note: The installation of `dkms` in Mint or Ubuntu will result in the installation of the various development tools and required headers, if not previously installed, so no addition action is necessary on these distros.
+
 ### Installation of the Driver:
 
 Note: The installation instructions I am providing are for the novice user. Experienced users are welcome to alter the installation to meet their needs.
 
-Go to `https://github.com/morrownr/88x2bu` for the latest version of the driver.
+Note: The quick way to open a terminal in Mint or Ubuntu: Ctrl+Alt+T (hold down on the Ctrl and Alt keys then press the T key.)
+
+Note: My technique is to create a folder in my home directory to hold source packages. I call it `src`.
+
+Create a folder to hold the downloaded driver file by first opening a terminal (Ctrl+Alt+T).
+
+In the terminal, create the folder to hold the driver file:
+```
+$ mkdir src
+```
+
+Get the latest version of the driver from: `https://github.com/morrownr/88x2bu`
 
 Download the driver by clicking on the green `Code` button.
 
-Click on `Download ZIP` and save `88x2bu-master.zip` in your `Downloads` folder.
+Click on `Download ZIP` and save `88x2bu-master.zip` in your `src` folder.
 
 Upzip `88x2bu-master.zip`. A folder called `88x2bu-master` should be created.
 
 Open a terminal and enter the folder called `88x2bu-master`:
 
 ```
-$ cd ~/Downloads/88x2bu-master
+$ cd ~/src/88x2bu-master
 ```
 
 Execute the following command:
@@ -143,3 +156,5 @@ Verify the mode has changed:
 ```
 $ sudo iw dev
 ```
+
+### Enjoy
