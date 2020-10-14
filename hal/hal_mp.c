@@ -2293,6 +2293,7 @@ void mpt_ProSetPMacTx(PADAPTER	Adapter)
 	PRINT_DATA("Src Address", Adapter->mac_addr, ETH_ALEN);
 	PRINT_DATA("Dest Address", PMacTxInfo.MacAddress, ETH_ALEN);
 #endif
+
 	if (pmppriv->pktInterval != 0)
 		PMacTxInfo.PacketPeriod = pmppriv->pktInterval;
 

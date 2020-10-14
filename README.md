@@ -3,7 +3,7 @@
 ### Linux Driver for the RealTek RTL8812BU and RTL8822BU Chipsets.
 
 - Driver Version: 5.8.7.2.36899.20200819 (Realtek)
-- Numerous updates from the Linux community
+- Plus numerous updates from the Linux community
 
 ### Supported Features:
 
@@ -22,12 +22,12 @@
 ### Supported Kernels:
 
 - Kernels: 2.6.24 ~ 5.6 (Realtek)
-- Kernel 5.8
+- Kernels: 5.4 - 5.8
 
 ### Supported Linux Distributions:
 
 - Ubuntu - https://linuxmint.com/
-- Mint --- https://ubuntu.com/
+- Mint - https://ubuntu.com/
 
 ### Tested Linux Distributions:
 
@@ -95,7 +95,7 @@ Open a terminal and enter the folder called `88x2bu-master`:
 $ cd ~/src/88x2bu-master
 ```
 
-Execute the following command:
+Execute the following commands:
 ```
 $ sudo ./dkms-install.sh
 ```
@@ -104,7 +104,7 @@ $ sudo reboot
 ```
 ### Removal of the Driver:
 
-Open a terminal in the directory with the source code and execute the following command:
+Open a terminal in the directory with the source code and execute the following commands:
 ```
 $ sudo ./dkms-remove.sh
 ```

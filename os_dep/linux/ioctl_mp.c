@@ -538,7 +538,6 @@ exit:
 	return ret;
 }
 
-
 int rtw_mp_channel(struct net_device *dev,
 		   struct iw_request_info *info,
 		   struct iw_point *wrqu, char *extra)
