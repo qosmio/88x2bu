@@ -22,7 +22,7 @@
 ### Supported Kernels:
 
 - Kernels: 2.6.24 ~ 5.6 (Realtek)
-- Kernels: 5.4 - 5.8
+- Kernels: 5.7 - 5.9
 
 ### Supported Linux Distributions:
 
