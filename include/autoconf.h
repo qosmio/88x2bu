@@ -62,7 +62,7 @@
 #endif
 
 /*
- * Internal  General Config
+ * 	Internal  General Config
  */
 /* #define CONFIG_H2CLBK */
 
