@@ -208,6 +208,7 @@ $ lsusb -t
 ```
 
 USB 2 =  480M
+
 USB 3 = 5000M
 
 Note: If there is a problem, delete `88x2bu.conf`.
