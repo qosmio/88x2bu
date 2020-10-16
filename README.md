@@ -162,4 +162,52 @@ Verify the mode has changed:
 $ sudo iw dev
 ```
 
+### USB 3 Support
+
+I have included a file called 88x2bu.conf that
+will be installed in /etc/modeprob.d by default.
+
+88x2bu.conf passes a parameter to the driver
+during boot that turns USB 3 mode on. The
+difference in performance can be large as shown
+during tests that I conducted:
+
+```
+88x2bu without 88x2bu.conf
+ (average Bitrate = 255 Mbits/sec)
+
+Interval           Transfer     Bitrate
+1.00-2.00   sec  30.9 MBytes   260 Mbits/sec
+2.00-3.00   sec  29.5 MBytes   247 Mbits/sec
+3.00-4.00   sec  32.6 MBytes   273 Mbits/sec
+4.00-5.00   sec  30.6 MBytes   256 Mbits/sec
+5.00-6.00   sec  30.4 MBytes   255 Mbits/sec
+6.00-7.00   sec  28.3 MBytes   238 Mbits/sec
+```
+
+```
+88x2bu with 88x2bu.conf
+ (average Bitrate = 411 Mbits/sec)
+
+Interval           Transfer     Bitrate
+1.00-2.00   sec  48.8 MBytes   409 Mbits/sec
+2.00-3.00   sec  47.5 MBytes   398 Mbits/sec
+3.00-4.00   sec  51.2 MBytes   430 Mbits/sec
+4.00-5.00   sec  48.8 MBytes   409 Mbits/sec
+5.00-6.00   sec  50.0 MBytes   419 Mbits/sec
+6.00-7.00   sec  47.5 MBytes   398 Mbits/sec
+```
+
+That is a 62% increase in performance!
+
+Test to see what your USB mode is:
+
+```
+$ lsusb -t
+```
+
+480M = USB 2
+5000M = USB 3
+
+
 ### Enjoy
