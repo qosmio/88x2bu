@@ -206,7 +206,7 @@ Test to see what your USB mode is:
 $ lsusb -t
 ```
 
-480M = USB 2  -  5000M = USB 3
+480M = USB 2, 5000M = USB 3
 
 
 ### Enjoy
