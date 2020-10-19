@@ -85,14 +85,14 @@ Get the latest version of the driver from: `https://github.com/morrownr/88x2bu`
 
 Download the driver by clicking on the green `Code` button.
 
-Click on `Download ZIP` and save `88x2bu-master.zip` in your `src` folder.
+Click on `Download ZIP` and save `88x2bu-5.8.7.2.zip` in your `src` folder.
 
-Upzip `88x2bu-master.zip`. A folder called `88x2bu-master` should be created.
+Upzip `88x2bu-5.8.7.2.zip`. A folder called `88x2bu-5.8.7.2` should be created.
 
-Open a terminal and enter the folder called `88x2bu-master`:
+Open a terminal and enter the folder called `88x2bu-5.8.7.2`:
 
 ```
-$ cd ~/src/88x2bu-master
+$ cd ~/src/88x2bu-5.8.7.2
 ```
 
 Execute the following commands:
