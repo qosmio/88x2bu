@@ -2463,10 +2463,9 @@ static int rtw_wx_get_essid(struct net_device *dev,
 		*extra = 0;
 	}
 
-exit:
 
-		wrqu->essid.length = len;
-		wrqu->essid.flags = 1;
+	wrqu->essid.length = len;
+	wrqu->essid.flags = 1;
 
 	return ret;
 
