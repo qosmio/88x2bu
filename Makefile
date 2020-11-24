@@ -94,6 +94,7 @@ CONFIG_IP_R_MONITOR = n #arp VOQ and high rate
 CONFIG_RTW_UP_MAPPING_RULE = tos
 # Enable VHT rate on 2.4G channel or not
 CONFIG_RTW_VHT_2G4 = y
+CONFIG_RTW_IOCTL_SET_COUNTRY = y
 
 ########################## Debug ###########################
 CONFIG_DISABLE_PHYDM_DEBUG_FUNCTION = y
@@ -125,11 +126,12 @@ CONFIG_AP_WOWLAN = n
 ######### Notify SDIO Host Keep Power During Syspend ##########
 CONFIG_RTW_SDIO_PM_KEEP_POWER = y
 ###################### MP HW TX MODE FOR VHT #######################
-CONFIG_MP_VHT_HW_TX_MODE = n
+CONFIG_MP_VHT_HW_TX_MODE = y
 ###################### Platform Related #######################
-CONFIG_PLATFORM_I386_PC = y
+CONFIG_PLATFORM_ARM_NV_NANO = n 
+CONFIG_PLATFORM_I386_PC = n
+CONFIG_PLATFORM_ARM64_RPI = y
 CONFIG_PLATFORM_ARM_RPI = n
-CONFIG_PLATFORM_ARM64_RPI = n
 CONFIG_PLATFORM_ANDROID_X86 = n
 CONFIG_PLATFORM_ANDROID_INTEL_X86 = n
 CONFIG_PLATFORM_JB_X86 = n
@@ -1279,9 +1281,6 @@ EXTRA_CFLAGS += -DCONFIG_MP_VHT_HW_TX_MODE
 ifeq ($(CONFIG_PLATFORM_I386_PC), y)
 ## For I386 X86 ToolChain use Hardware FLOATING
 EXTRA_CFLAGS += -mhard-float
-else
-## For ARM ToolChain use Hardware FLOATING
-EXTRA_CFLAGS += -mfloat-abi=hard
 endif
 endif
 
@@ -1333,24 +1332,33 @@ ifeq ($(CONFIG_PLATFORM_ARM_RPI), y)
 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
 EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
 EXTRA_CFLAGS += -DPLATFORM_LINUX
+EXTRA_CFLAGS += -DRTW_SINGLE_WIPHY
+EXTRA_CFLAGS += -mfloat-abi=hard
 ARCH ?= arm
 CROSS_COMPILE ?=
 KVER ?= $(shell uname -r)
-KSRC := /lib/modules/$(KVER)/build
+KSRC ?= /lib/modules/$(KVER)/build
 MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
 INSTALL_PREFIX :=
+STAGINGMODDIR := /lib/modules/$(KVER)/kernel/drivers/staging
+endif
+
+ifeq ($(CONFIG_RTW_IOCTL_SET_COUNTRY), y)
+EXTRA_CFLAGS += -DCONFIG_RTW_IOCTL_SET_COUNTRY
 endif
 
 ifeq ($(CONFIG_PLATFORM_ARM64_RPI), y)
 EXTRA_CFLAGS += -DCONFIG_LITTLE_ENDIAN
 EXTRA_CFLAGS += -DCONFIG_IOCTL_CFG80211 -DRTW_USE_CFG80211_STA_EVENT
 EXTRA_CFLAGS += -fno-stack-protector
+EXTRA_CFLAGS += -DRTW_SINGLE_WIPHY
 ARCH ?= arm64
 CROSS_COMPILE ?=
 KVER ?= $(shell uname -r)
 KSRC := /lib/modules/$(KVER)/build
 MODDESTDIR := /lib/modules/$(KVER)/kernel/drivers/net/wireless/
 INSTALL_PREFIX :=
+STAGINGMODDIR := /lib/modules/$(KVER)/kernel/drivers/staging
 endif
 
 ifeq ($(CONFIG_PLATFORM_NV_TK1), y)
@@ -2414,6 +2422,7 @@ else
 export CONFIG_RTL8822BU = m
 
 all: modules
+	@echo obj-$(CONFIG_RTL8822BU)
 
 modules:
 	$(MAKE) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) -C $(KSRC) M=$(shell pwd)  modules
